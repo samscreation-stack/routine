@@ -1,0 +1,1331 @@
+/* =========================================
+   SAM AND MALEKA HUB
+   Main Website Styles
+   ========================================= */
+
+
+/* ---------- Basic Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif;
+    min-height: 100vh;
+    color: #24352b;
+
+    background:
+        linear-gradient(
+            rgba(245, 248, 241, 0.78),
+            rgba(245, 248, 241, 0.88)
+        ),
+        url("assets/bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* ---------- Main Container ---------- */
+
+.home-container {
+    width: min(1200px, 94%);
+    margin: 0 auto;
+    padding: 35px 0 50px;
+}
+
+
+/* ---------- Header ---------- */
+
+.site-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 8px 25px rgba(38, 67, 48, 0.15);
+
+    margin-bottom: 12px;
+}
+
+.site-header h1 {
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #244b35;
+
+    margin-bottom: 6px;
+}
+
+.site-header p {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: #607566;
+    font-weight: 500;
+}
+
+
+/* ---------- 9 × 4 Grid ---------- */
+
+.chapter-grid {
+    display: grid;
+
+    /*
+       4 columns
+       9 rows naturally created
+    */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+
+/* ---------- Grid Buttons ---------- */
+
+.chapter-button {
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 12px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #294536;
+
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 600;
+    line-height: 1.55;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(87, 119, 96, 0.18);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(39, 67, 48, 0.07);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* ---------- Clickable Buttons ---------- */
+
+a.chapter-button {
+    cursor: pointer;
+}
+
+a.chapter-button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 9px 25px rgba(39, 67, 48, 0.13);
+}
+
+a.chapter-button:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- Non-clickable Cells ---------- */
+
+div.chapter-button {
+    cursor: default;
+}
+
+
+/* ---------- Empty "-" Cell ---------- */
+
+.chapter-button:has(> *) {
+    cursor: default;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .home-container {
+        width: 96%;
+        padding-top: 24px;
+        padding-bottom: 35px;
+    }
+
+    .site-header {
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        width: 68px;
+        height: 68px;
+        border-width: 3px;
+    }
+
+    .chapter-grid {
+        /*
+           IMPORTANT:
+           Still 4 columns on mobile.
+        */
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        gap: 6px;
+    }
+
+    .chapter-button {
+        min-height: 82px;
+
+        padding: 9px 5px;
+
+        border-radius: 10px;
+
+        font-size: clamp(0.67rem, 2.5vw, 0.85rem);
+
+        line-height: 1.4;
+
+        word-break: normal;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+/* ---------- Very Small Phones ---------- */
+
+@media (max-width: 380px) {
+
+    .home-container {
+        width: 97%;
+    }
+
+    .chapter-grid {
+        gap: 4px;
+    }
+
+    .chapter-button {
+        min-height: 78px;
+
+        padding: 7px 3px;
+
+        border-radius: 8px;
+
+        font-size: 0.63rem;
+    }
+}
+
+
+/* ---------- Accessibility ---------- */
+
+a.chapter-button:focus-visible {
+    outline: 3px solid rgba(68, 112, 82, 0.45);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   ROMANTIC PREMIUM BUTTONS
+   ========================================= */
+
+.romantic {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.78),
+            rgba(249, 237, 241, 0.76)
+        );
+
+    color: #684653;
+
+    border: 1px solid rgba(145, 103, 116, 0.18);
+
+    box-shadow:
+        0 5px 18px rgba(82, 61, 68, 0.08);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* Decorative hearts */
+
+.romantic::before,
+.romantic::after {
+    position: absolute;
+
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+
+    color: rgba(190, 92, 126, 0.16);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Large background heart */
+
+.romantic::before {
+    content: "♥";
+
+    font-size: 75px;
+
+    right: 8px;
+    bottom: -22px;
+
+    transform: rotate(-12deg);
+}
+
+
+/* Small background heart */
+
+.romantic::after {
+    content: "♥";
+
+    font-size: 30px;
+
+    left: 12px;
+    top: 8px;
+
+    transform: rotate(15deg);
+
+    color: rgba(190, 92, 126, 0.12);
+}
+
+
+/* Keep button text above the hearts */
+
+.romantic {
+    isolation: isolate;
+}
+
+.romantic > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Hover */
+
+.romantic:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.90),
+            rgba(250, 235, 241, 0.86)
+        );
+
+    color: #5c3946;
+
+    box-shadow:
+        0 9px 26px rgba(82, 61, 68, 0.12);
+}
+
+
+/* 2-column romantic button */
+
+.romantic-wide {
+    grid-column: span 2;
+}
+
+
+/* 3-column romantic button */
+
+.romantic-extra-wide {
+    grid-column: span 3;
+}
+
+/* =========================================
+   PREMIUM CHAPTER / LESSON PAGES
+   ========================================= */
+
+.chapter-page {
+    width: min(1080px, 94%);
+    margin: 0 auto;
+    padding: 28px 0 55px;
+}
+
+
+/* ---------- Header ---------- */
+
+.chapter-header {
+    margin-bottom: 28px;
+}
+
+.chapter-brand {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.chapter-brand h1 {
+    font-size: clamp(1.7rem, 4vw, 2.45rem);
+    color: #244b35;
+    margin-bottom: 5px;
+}
+
+.chapter-brand p {
+    color: #607566;
+    font-size: 0.98rem;
+}
+
+
+/* ---------- Back Button ---------- */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 15px;
+
+    color: #355b43;
+    background: rgba(255, 255, 255, 0.68);
+
+    border: 1px solid rgba(87, 119, 96, 0.16);
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 650;
+
+    box-shadow:
+        0 5px 16px rgba(39, 67, 48, 0.06);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: 0.2s ease;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.92);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Lesson Layout ---------- */
+
+.lesson-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* ---------- Chapter Title ---------- */
+
+.lesson-title {
+    position: relative;
+
+    padding: 28px 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(242, 247, 240, 0.72)
+        );
+
+    border: 1px solid rgba(87, 119, 96, 0.15);
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 35px rgba(39, 67, 48, 0.08);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.paper-label {
+    display: inline-block;
+
+    padding: 5px 13px;
+    margin-bottom: 9px;
+
+    border-radius: 30px;
+
+    background: rgba(71, 112, 82, 0.10);
+
+    color: #477052;
+
+    font-size: 0.76rem;
+    font-weight: 750;
+    letter-spacing: 0.4px;
+}
+
+.lesson-title h2 {
+    color: #294536;
+
+    font-size: clamp(1.4rem, 3vw, 2.05rem);
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   STUDY CARDS
+   ========================================= */
+
+.study-card {
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(248, 250, 246, 0.72)
+        );
+
+    border: 1px solid rgba(87, 119, 96, 0.14);
+    border-radius: 19px;
+
+    box-shadow:
+        0 10px 32px rgba(39, 67, 48, 0.07);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* ---------- Card Heading ---------- */
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 16px;
+}
+
+.card-heading > div {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: rgba(71, 112, 82, 0.10);
+
+    color: #477052;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.card-heading h3 {
+    color: #294536;
+    font-size: 1.08rem;
+}
+
+.card-label {
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    background: rgba(71, 112, 82, 0.07);
+
+    color: #6c7d70;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================
+   VIDEO
+   ========================================= */
+
+.video-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #17231c;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(22, 36, 27, 0.12);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* ---------- YouTube Button ---------- */
+
+.youtube-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    margin-top: 13px;
+
+    width: 100%;
+
+    padding: 12px 18px;
+
+    border-radius: 11px;
+
+    background: #315d40;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 16px rgba(39, 67, 48, 0.12);
+
+    transition: 0.2s ease;
+}
+
+.youtube-button:hover {
+    background: #244b35;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 21px rgba(39, 67, 48, 0.17);
+}
+
+
+/* =========================================
+   PDF
+   ========================================= */
+
+.card-description {
+    margin-bottom: 13px;
+
+    color: #718276;
+
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+
+/* ---------- Open PDF Button ---------- */
+
+.pdf-open-button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(87, 119, 96, 0.15);
+    border-radius: 12px;
+
+    background: rgba(245, 248, 243, 0.82);
+
+    color: #355b43;
+
+    font-family: inherit;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.pdf-open-button:hover {
+    background: rgba(234, 241, 233, 0.95);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(39, 67, 48, 0.08);
+}
+
+.pdf-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(71, 112, 82, 0.11);
+
+    font-size: 0.95rem;
+}
+
+.open-arrow {
+    font-size: 1rem;
+}
+
+
+/* ---------- PDF Viewer Container ---------- */
+
+.pdf-viewer-container {
+    display: none;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(87, 119, 96, 0.15);
+
+    background: rgba(238, 242, 237, 0.9);
+
+    box-shadow:
+        0 8px 25px rgba(39, 67, 48, 0.08);
+}
+
+.pdf-viewer-container.active {
+    display: block;
+}
+
+
+/* ---------- PDF Viewer Header ---------- */
+
+.pdf-viewer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border-bottom: 1px solid rgba(87, 119, 96, 0.12);
+}
+
+.pdf-viewer-header div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pdf-viewer-header strong {
+    color: #294536;
+    font-size: 0.88rem;
+}
+
+.pdf-viewer-header span {
+    color: #819087;
+    font-size: 0.68rem;
+}
+
+
+/* ---------- Close PDF ---------- */
+
+.pdf-close-button {
+    padding: 7px 10px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: rgba(145, 80, 80, 0.08);
+
+    color: #855252;
+
+    font-family: inherit;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.pdf-close-button:hover {
+    background: rgba(145, 80, 80, 0.14);
+}
+
+
+/* ---------- PDF Frame ---------- */
+
+.pdf-viewer {
+    width: 100%;
+    height: 720px;
+
+    background: #ffffff;
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================================
+   RESOURCES
+   ========================================= */
+
+.resource-content {
+    padding: 15px;
+
+    border-radius: 11px;
+
+    background: rgba(239, 244, 237, 0.65);
+
+    border: 1px solid rgba(87, 119, 96, 0.10);
+}
+
+.resource-content p {
+    color: #65776a;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.chapter-footer {
+    padding-top: 30px;
+
+    text-align: center;
+
+    color: #7a887e;
+
+    font-size: 0.78rem;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .chapter-page {
+        width: 94%;
+        padding-top: 18px;
+        padding-bottom: 35px;
+    }
+
+    .chapter-header {
+        margin-bottom: 20px;
+    }
+
+    .back-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .chapter-brand {
+        margin-top: 18px;
+    }
+
+    .lesson-title {
+        padding: 22px 15px;
+        border-radius: 15px;
+    }
+
+    .study-card {
+        padding: 13px;
+
+        border-radius: 15px;
+    }
+
+    .card-heading {
+        margin-bottom: 12px;
+    }
+
+    .card-heading h3 {
+        font-size: 0.95rem;
+    }
+
+    .card-label {
+        display: none;
+    }
+
+    .video-wrapper {
+        border-radius: 11px;
+    }
+
+    .pdf-viewer {
+        height: 520px;
+    }
+
+    .pdf-viewer-header {
+        padding: 10px;
+    }
+
+    .pdf-close-button {
+        font-size: 0.67rem;
+    }
+}
+
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width: 380px) {
+
+    .chapter-page {
+        width: 96%;
+    }
+
+    .lesson-title {
+        padding: 18px 10px;
+    }
+
+    .study-card {
+        padding: 10px;
+    }
+
+    .pdf-viewer {
+        height: 450px;
+    }
+
+    .pdf-viewer-header strong {
+        font-size: 0.78rem;
+    }
+}
+
+/* =========================================
+   PREMIUM ROMANTIC SPECIAL PAGES
+   ========================================= */
+
+.romantic-page {
+    width: min(900px, 94%);
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 28px 0 45px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ---------- Back Button ---------- */
+
+.romantic-back {
+    align-self: flex-start;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 15px;
+
+    color: #684653;
+    background: rgba(255, 255, 255, 0.70);
+
+    border: 1px solid rgba(145, 103, 116, 0.16);
+    border-radius: 11px;
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 650;
+
+    box-shadow:
+        0 5px 16px rgba(82, 61, 68, 0.06);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: 0.2s ease;
+}
+
+.romantic-back:hover {
+    background: rgba(255, 255, 255, 0.92);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 21px rgba(82, 61, 68, 0.10);
+}
+
+
+/* =========================================
+   MAIN ROMANTIC CARD
+   ========================================= */
+
+.romantic-card {
+    position: relative;
+
+    margin-top: 28px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.84),
+            rgba(250, 238, 243, 0.72)
+        );
+
+    border: 1px solid rgba(145, 103, 116, 0.16);
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(82, 61, 68, 0.10);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+
+/* ---------- Decorative Hearts ---------- */
+
+.romantic-card::before {
+    content: "♥";
+
+    position: absolute;
+
+    right: -20px;
+    top: -35px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 150px;
+
+    color: rgba(190, 92, 126, 0.055);
+
+    transform: rotate(15deg);
+
+    pointer-events: none;
+}
+
+.romantic-card::after {
+    content: "♥";
+
+    position: absolute;
+
+    left: -15px;
+    bottom: -45px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 130px;
+
+    color: rgba(190, 92, 126, 0.045);
+
+    transform: rotate(-18deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE
+   ========================================= */
+
+.romantic-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    padding: 28px 28px 0;
+}
+
+.romantic-image {
+    display: block;
+
+    width: 100%;
+    max-height: 480px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(82, 61, 68, 0.12);
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.romantic-content {
+    position: relative;
+    z-index: 2;
+
+    padding: 30px 35px 38px;
+
+    text-align: center;
+}
+
+
+/* ---------- Label ---------- */
+
+.romantic-label {
+    display: inline-block;
+
+    padding: 6px 13px;
+
+    border-radius: 30px;
+
+    background: rgba(190, 92, 126, 0.08);
+
+    color: #8a5669;
+
+    font-size: 0.72rem;
+    font-weight: 750;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ---------- Title ---------- */
+
+.romantic-content h1 {
+    margin-top: 14px;
+
+    color: #684653;
+
+    font-size: clamp(1.7rem, 5vw, 2.5rem);
+
+    line-height: 1.4;
+}
+
+
+/* ---------- Divider ---------- */
+
+.romantic-divider {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 18px auto;
+
+    color: rgba(190, 92, 126, 0.65);
+
+    font-size: 0.9rem;
+}
+
+.romantic-divider span {
+    width: 55px;
+    height: 1px;
+
+    background: rgba(190, 92, 126, 0.20);
+}
+
+
+/* ---------- Message ---------- */
+
+.romantic-message {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #695861;
+
+    font-size: 1rem;
+
+    line-height: 2;
+
+    font-weight: 450;
+}
+
+
+/* ---------- Quote ---------- */
+
+.romantic-quote {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    padding: 18px 22px;
+
+    color: #7b5966;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border-left: 3px solid rgba(190, 92, 126, 0.30);
+
+    border-radius: 0 12px 12px 0;
+
+    font-size: 0.92rem;
+
+    line-height: 1.8;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.romantic-footer {
+    margin-top: auto;
+
+    padding-top: 30px;
+
+    text-align: center;
+
+    color: #8a777e;
+
+    font-size: 0.76rem;
+}
+
+
+/* =========================================
+   ROMANTIC PAGE - MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .romantic-page {
+        width: 94%;
+        padding-top: 18px;
+        padding-bottom: 30px;
+    }
+
+    .romantic-back {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .romantic-card {
+        margin-top: 18px;
+
+        border-radius: 17px;
+    }
+
+    .romantic-image-wrapper {
+        padding: 12px 12px 0;
+    }
+
+    .romantic-image {
+        max-height: 380px;
+
+        border-radius: 12px;
+    }
+
+    .romantic-content {
+        padding: 23px 16px 28px;
+    }
+
+    .romantic-content h1 {
+        font-size: 1.55rem;
+    }
+
+    .romantic-message {
+        font-size: 0.91rem;
+        line-height: 1.85;
+    }
+
+    .romantic-quote {
+        padding: 14px 16px;
+
+        font-size: 0.84rem;
+        line-height: 1.7;
+    }
+
+    .romantic-card::before {
+        font-size: 100px;
+    }
+
+    .romantic-card::after {
+        font-size: 90px;
+    }
+}
+
+
+/* ---------- Very Small Phones ---------- */
+
+@media (max-width: 380px) {
+
+    .romantic-page {
+        width: 96%;
+    }
+
+    .romantic-image-wrapper {
+        padding: 9px 9px 0;
+    }
+
+    .romantic-content {
+        padding: 20px 12px 24px;
+    }
+
+    .romantic-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .romantic-message {
+        font-size: 0.86rem;
+    }
+
+    .romantic-divider span {
+        width: 40px;
+    }
+}
