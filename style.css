@@ -1332,7 +1332,7 @@ a.chapter-button:focus-visible {
 
 /* ==================================================
    HAPPY GIRLFRIEND DAY CARD
-   REMOVE THIS ENTIRE CSS BLOCK AFTER AUGUST 1, 2026
+   REMOVE THIS ENTIRE BLOCK AFTER AUGUST 1, 2026
    ================================================== */
 
 .girlfriend-day-card {
@@ -1340,16 +1340,22 @@ a.chapter-button:focus-visible {
     overflow: hidden;
 
     width: 100%;
-    margin-bottom: 28px;
+    min-height: 125px;
+
+    margin: 0 0 28px;
     padding: 24px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     text-align: center;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255, 250, 252, 0.88),
-            rgba(250, 238, 244, 0.78)
+            rgba(255, 250, 252, 0.92),
+            rgba(250, 238, 244, 0.84)
         );
 
     border: 1px solid rgba(190, 117, 145, 0.20);
@@ -1365,28 +1371,37 @@ a.chapter-button:focus-visible {
 }
 
 
-/* ---------- Card Content ---------- */
+/* ---------- Content ---------- */
 
-.girlfriend-day-content {
+.girlfriend-day-card .girlfriend-day-content {
     position: relative;
     z-index: 5;
-}
 
-.girlfriend-day-small {
+    width: 100%;
+
     display: block;
 
-    margin-bottom: 4px;
+    text-align: center;
+}
+
+
+.girlfriend-day-card .girlfriend-day-small {
+    display: block;
+
+    margin: 0 0 4px;
 
     color: #9a6879;
 
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 600;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
 
 .girlfriend-day-card h2 {
+    display: block;
+
     margin: 0;
 
     color: #704454;
@@ -1394,36 +1409,42 @@ a.chapter-button:focus-visible {
     font-size: clamp(1.35rem, 4vw, 1.9rem);
     font-weight: 700;
 
-    letter-spacing: 0.2px;
+    line-height: 1.25;
 }
 
 
-.girlfriend-day-quote {
-    min-height: 20px;
+.girlfriend-day-card .girlfriend-day-quote {
+    display: block;
+
+    min-height: 18px;
 
     margin: 7px auto 0;
 
-    max-width: 600px;
-
     color: #85606d;
 
-    font-size: clamp(0.75rem, 2vw, 0.88rem);
+    font-size: clamp(0.72rem, 2vw, 0.88rem);
     font-weight: 500;
 
     line-height: 1.5;
 }
 
 
-/* ---------- Decorative Background Hearts ---------- */
+/* ---------- Hearts ---------- */
 
-.girlfriend-hearts {
+.girlfriend-day-card .girlfriend-hearts {
     position: absolute;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
 
     pointer-events: none;
 
-    color: rgba(190, 92, 126, 0.12);
-
     font-family: Arial, sans-serif;
+    line-height: 1;
+
+    color: rgba(190, 92, 126, 0.13);
 
     z-index: 1;
 }
@@ -1431,23 +1452,23 @@ a.chapter-button:focus-visible {
 
 /* Large heart */
 
-.heart-one {
-    right: 5%;
-    bottom: -22px;
+.girlfriend-day-card .heart-one {
+    right: 4%;
+    bottom: -18px;
 
-    font-size: 88px;
+    font-size: 82px;
 
     transform: rotate(-12deg);
 }
 
 
-/* Upper-left heart */
+/* Top-left */
 
-.heart-two {
-    left: 6%;
-    top: 7px;
+.girlfriend-day-card .heart-two {
+    left: 5%;
+    top: 8px;
 
-    font-size: 38px;
+    font-size: 36px;
 
     color: rgba(190, 92, 126, 0.10);
 
@@ -1455,11 +1476,11 @@ a.chapter-button:focus-visible {
 }
 
 
-/* Small heart */
+/* Small upper-right */
 
-.heart-three {
-    right: 22%;
-    top: 12px;
+.girlfriend-day-card .heart-three {
+    right: 20%;
+    top: 10px;
 
     font-size: 22px;
 
@@ -1469,13 +1490,13 @@ a.chapter-button:focus-visible {
 }
 
 
-/* Bottom-left heart */
+/* Small bottom-left */
 
-.heart-four {
-    left: 25%;
-    bottom: -5px;
+.girlfriend-day-card .heart-four {
+    left: 23%;
+    bottom: -3px;
 
-    font-size: 30px;
+    font-size: 28px;
 
     color: rgba(190, 92, 126, 0.08);
 
@@ -1488,40 +1509,48 @@ a.chapter-button:focus-visible {
 @media (max-width: 700px) {
 
     .girlfriend-day-card {
+        min-height: 110px;
+
         margin-bottom: 20px;
         padding: 20px 14px;
 
         border-radius: 14px;
     }
 
-    .girlfriend-day-small {
-        font-size: 0.7rem;
+    .girlfriend-day-card .girlfriend-day-small {
+        font-size: 0.68rem;
     }
 
     .girlfriend-day-card h2 {
         font-size: 1.3rem;
     }
 
-    .girlfriend-day-quote {
-        font-size: 0.72rem;
+    .girlfriend-day-card .girlfriend-day-quote {
+        font-size: 0.7rem;
     }
 
-    .heart-one {
-        font-size: 68px;
+    .girlfriend-day-card .heart-one {
         right: 2%;
-        bottom: -18px;
+        bottom: -16px;
+        font-size: 65px;
     }
 
-    .heart-two {
-        font-size: 30px;
+    .girlfriend-day-card .heart-two {
+        left: 4%;
+        top: 7px;
+        font-size: 28px;
     }
 
-    .heart-three {
-        font-size: 18px;
+    .girlfriend-day-card .heart-three {
+        right: 18%;
+        top: 8px;
+        font-size: 17px;
     }
 
-    .heart-four {
-        font-size: 24px;
+    .girlfriend-day-card .heart-four {
+        left: 20%;
+        bottom: -2px;
+        font-size: 22px;
     }
 }
 
