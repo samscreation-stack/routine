@@ -1558,3 +1558,67 @@ a.chapter-button:focus-visible {
 /* ==================================================
    END OF HAPPY GIRLFRIEND DAY CARD
    ================================================== */
+
+/* ---------- Class Note Button ---------- */
+
+.resource-open-button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 17px;
+
+    text-decoration: none;
+
+    color: #294536;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(87, 119, 96, 0.18);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 18px rgba(39, 67, 48, 0.07);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.resource-open-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 9px 25px rgba(39, 67, 48, 0.13);
+}
+
+.resource-open-button:active {
+    transform: translateY(0);
+}
+
+.resource-icon {
+    font-size: 1.15rem;
+}
+
+.resource-open-button > span:nth-child(2) {
+    flex: 1;
+
+    margin-left: 12px;
+
+    text-align: left;
+
+    font-weight: 600;
+}
+
+.resource-open-button .open-arrow {
+    font-size: 1.1rem;
+}
